@@ -1,0 +1,121 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2d3748" text-anchor="middle">
+    Inside Flow Architecture
+  </text>
+  
+  <!-- Frontend Layer -->
+  <rect x="50" y="70" width="700" height="100" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1565c0" text-anchor="middle">
+    Frontend Layer
+  </text>
+  <text x="120" y="125" font-family="Arial, sans-serif" font-size="13" fill="#424242">
+    • Flow Designer UI
+  </text>
+  <text x="120" y="145" font-family="Arial, sans-serif" font-size="13" fill="#424242">
+    • Real-time Dashboard
+  </text>
+  <text x="340" y="125" font-family="Arial, sans-serif" font-size="13" fill="#424242">
+    • Monitoring Console
+  </text>
+  <text x="340" y="145" font-family="Arial, sans-serif" font-size="13" fill="#424242">
+    • Analytics Viewer
+  </text>
+  <text x="560" y="125" font-family="Arial, sans-serif" font-size="13" fill="#424242">
+    • Configuration Panel
+  </text>
+  
+  <!-- API Gateway -->
+  <rect x="250" y="200" width="300" height="60" rx="8" fill="url(#boxGrad)" stroke="#5e35b1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="235" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    API Gateway / WebSocket Server
+  </text>
+  
+  <!-- Core Services Layer -->
+  <rect x="50" y="290" width="700" height="160" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="315" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Core Services
+  </text>
+  
+  <!-- Service boxes -->
+  <rect x="70" y="330" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="140" y="360" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Flow Engine
+  </text>
+  
+  <rect x="230" y="330" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="300" y="360" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    State Manager
+  </text>
+  
+  <rect x="390" y="330" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="460" y="360" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Rule Engine
+  </text>
+  
+  <rect x="550" y="330" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="620" y="360" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Event Handler
+  </text>
+  
+  <rect x="150" y="390" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="220" y="420" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Task Executor
+  </text>
+  
+  <rect x="330" y="390" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Audit Logger
+  </text>
+  
+  <rect x="510" y="390" width="140" height="50" rx="6" fill="#ffffff" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="580" y="420" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e65100" text-anchor="middle">
+    Monitor Service
+  </text>
+  
+  <!-- Data Layer -->
+  <rect x="50" y="480" width="700" height="90" rx="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="505" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2e7d32" text-anchor="middle">
+    Data Layer
+  </text>
+  
+  <rect x="120" y="520" width="150" height="40" rx="6" fill="#ffffff" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="195" y="545" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">
+    PostgreSQL
+  </text>
+  
+  <rect x="325" y="520" width="150" height="40" rx="6" fill="#ffffff" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="400" y="545" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">
+    Redis Cache
+  </text>
+  
+  <rect x="530" y="520" width="150" height="40" rx="6" fill="#ffffff" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="605" y="545" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32" text-anchor="middle">
+    Event Store
+  </text>
+  
+  <!-- Connection arrows -->
+  <path d="M 400 170 L 400 200" stroke="#5e35b1" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 400 260 L 400 290" stroke="#ff9800" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 400 450 L 400 480" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#424242" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Auth - Identity & Access Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Login/Register Container -->
+    <div id="authContainer" class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <i class="bi bi-shield-lock-fill"></i>
+                <h2>Secure Auth</h2>
+                <p>Identity & Access Management</p>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form active">
+                <h4>Sign In</h4>
+                <form onsubmit="handleLogin(event)">
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-key"></i></span>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-box-arrow-in-right"></i> Sign In
+                    </button>
+                </form>
+                <div class="auth-links">
+                    <a href="#" onclick="showForgotPassword()">Forgot password?</a>
+                    <span>|</span>
+                    <a href="#" onclick="showRegister()">Create account</a>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" class="auth-form">
+                <h4>Create Account</h4>
+                <form onsubmit="handleRegister(event)">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="registerName" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-key"></i></span>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Min. 12 characters" required minlength="12">
+                        </div>
+                        <div class="password-requirements">
+                            <small><i class="bi bi-check-circle" id="reqLength"></i> 12+ characters</small>
+                            <small><i class="bi bi-check-circle" id="reqUpper"></i> Uppercase</small>
+                            <small><i class="bi bi-check-circle" id="reqLower"></i> Lowercase</small>
+                            <small><i class="bi bi-check-circle" id="reqNumber"></i> Number</small>
+                            <small><i class="bi bi-check-circle" id="reqSpecial"></i> Special char</small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-person-plus"></i> Create Account
+                    </button>
+                </form>
+                <div class="auth-links">
+                    <a href="#" onclick="showLogin()">Already have an account? Sign in</a>
+                </div>
+            </div>
+
+            <!-- Forgot Password Form -->
+            <div id="forgotPasswordForm" class="auth-form">
+                <h4>Reset Password</h4>
+                <p class="text-muted">Enter your email to receive a reset link</p>
+                <form onsubmit="handleForgotPassword(event)">
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="forgotEmail" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-send"></i> Send Reset Link
+                    </button>
+                </form>
+                <div class="auth-links">
+                    <a href="#" onclick="showLogin()">Back to Sign In</a>
+                </div>
+            </div>
+
+            <!-- MFA Form -->
+            <div id="mfaForm" class="auth-form">
+                <h4>Two-Factor Authentication</h4>
+                <p class="text-muted">Enter the code from your authenticator app</p>
+                <form onsubmit="handleMFA(event)">
+                    <div class="mb-3">
+                        <label class="form-label">Verification Code</label>
+                        <div class="mfa-input-container">
+                            <input type="text" class="form-control mfa-input" id="mfaCode" maxlength="6" placeholder="000000" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-shield-check"></i> Verify
+                    </button>
+                </form>
+                <div class="auth-links">
+                    <a href="#" onclick="showBackupCode()">Use backup code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div id="dashboardContainer" class="dashboard-container d-none">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-shield-lock-fill"></i> Secure Auth
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-page="overview">
+                                <i class="bi bi-speedometer2"></i> Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="sessions">
+                                <i class="bi bi-laptop"></i> Sessions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="security">
+                                <i class="bi bi-shield-check"></i> Security
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-page="activity">
+                                <i class="bi bi-clock-history"></i> Activity
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <span id="userEmail" class="text-light me-3"></span>
+                        <button class="btn btn-outline-light btn-sm" onclick="handleLogout()">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Overview Page -->
+            <div id="overviewPage" class="page-content active">
+                <div class="container-fluid">
+                    <h2 class="mb-4"><i class="bi bi-speedometer2"></i> Account Overview</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card profile-card">
+                                <div class="card-body text-center">
+                                    <div class="avatar mb-3">
+                                        <i class="bi bi-person-circle"></i>
+                                    </div>
+                                    <h5 id="profileName">User Name</h5>
+                                    <p class="text-muted" id="profileEmail">user@example.com</p>
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> Verified</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="bi bi-info-circle"></i> Account Information
+                                </div>
+                                <div class="card-body">
+                                    <div class="row mb-3">
+                                        <div class="col-4"><strong>User ID:</strong></div>
+                                        <div class="col-8" id="profileId">-</div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><strong>Roles:</strong></div>
+                                        <div class="col-8" id="profileRoles">-</div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><strong>MFA Status:</strong></div>
+                                        <div class="col-8" id="profileMfa">-</div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><strong>Last Login:</strong></div>
+                                        <div class="col-8" id="profileLastLogin">-</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="bi bi-shield"></i> Security Status
+                                </div>
+                                <div class="card-body">
+                                    <div class="security-item mb-3">
+                                        <div class="d-flex justify-content-between">
+                                            <span><i class="bi bi-key"></i> Password</span>
+                                            <span class="badge bg-success">Strong</span>
+                                        </div>
+                                    </div>
+                                    <div class="security-item mb-3">
+                                        <div class="d-flex justify-content-between">
+                                            <span><i class="bi bi-shield-lock"></i> Two-Factor Auth</span>
+                                            <span id="mfaStatus" class="badge bg-warning">Not Enabled</span>
+                                        </div>
+                                    </div>
+                                    <div class="security-item">
+                                        <div class="d-flex justify-content-between">
+                                            <span><i class="bi bi-laptop"></i> Active Sessions</span>
+                                            <span id="activeSessions" class="badge bg-info">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="bi bi-lightning"></i> Quick Actions
+                                </div>
+                                <div class="card-body">
+                                    <button class="btn btn-outline-primary w-100 mb-2" onclick="showChangePassword()">
+                                        <i class="bi bi-key"></i> Change Password
+                                    </button>
+                                    <button class="btn btn-outline-success w-100 mb-2" onclick="setupMFA()">
+                                        <i class="bi bi-shield-lock"></i> Enable 2FA
+                                    </button>
+                                    <button class="btn btn-outline-danger w-100" onclick="revokeAllSessions()">
+                                        <i class="bi bi-x-circle"></i> Revoke All Sessions
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sessions Page -->
+            <div id="sessionsPage" class="page-content">
+                <div class="container-fluid">
+                    <h2 class="mb-4"><i class="bi bi-laptop"></i> Active Sessions</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Device</th>
+                                            <th>IP Address</th>
+                                            <th>Location</th>
+                                            <th>Last Active</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sessionsList">
+                                        <tr>
+                                            <td colspan="5" class="text-center">Loading sessions...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Page -->
+            <div id="securityPage" class="page-content">
+                <div class="container-fluid">
+                    <h2 class="mb-4"><i class="bi bi-shield-check"></i> Security Settings</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="bi bi-key"></i> Password
+                        </div>
+                        <div class="card-body">
+                            <form onsubmit="handleChangePassword(event)">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" id="currentPassword" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword" required minlength="12">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmNewPassword" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-check"></i> Update Password
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="bi bi-shield-lock"></i> Two-Factor Authentication
+                        </div>
+                        <div class="card-body">
+                            <div id="mfaSetupContainer">
+                                <p>Protect your account with an additional layer of security.</p>
+                                <button class="btn btn-success" onclick="setupMFA()">
+                                    <i class="bi bi-qr-code"></i> Set Up 2FA
+                                </button>
+                            </div>
+                            <div id="mfaQRContainer" class="d-none text-center">
+                                <p>Scan this QR code with your authenticator app:</p>
+                                <img id="mfaQRCode" src="" alt="QR Code" class="mb-3">
+                                <p class="text-muted">Or enter this code manually:</p>
+                                <code id="mfaSecret" class="d-block mb-3"></code>
+                                <div class="mb-3">
+                                    <label class="form-label">Enter verification code to confirm:</label>
+                                    <input type="text" class="form-control w-50 mx-auto" id="mfaVerifyCode" maxlength="6">
+                                </div>
+                                <button class="btn btn-primary" onclick="verifyMFASetup()">
+                                    <i class="bi bi-check"></i> Verify & Enable
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Page -->
+            <div id="activityPage" class="page-content">
+                <div class="container-fluid">
+                    <h2 class="mb-4"><i class="bi bi-clock-history"></i> Activity Log</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Event</th>
+                                            <th>IP Address</th>
+                                            <th>Device</th>
+                                            <th>Timestamp</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="activityList">
+                                        <tr>
+                                            <td colspan="5" class="text-center">No activity recorded</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert">
+            <div class="toast-header">
+                <i class="bi bi-info-circle me-2" id="toastIcon"></i>
+                <strong class="me-auto" id="toastTitle">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastBody"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

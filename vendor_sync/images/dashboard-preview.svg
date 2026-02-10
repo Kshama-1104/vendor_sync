@@ -1,0 +1,294 @@
+<svg width="1600" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="cardGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="dashShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Browser Window Background -->
+  <rect width="1600" height="900" fill="#e5e7eb"/>
+  
+  <!-- Browser Chrome -->
+  <rect width="1600" height="60" fill="#374151"/>
+  <circle cx="30" cy="30" r="8" fill="#ef4444"/>
+  <circle cx="60" cy="30" r="8" fill="#f59e0b"/>
+  <circle cx="90" cy="30" r="8" fill="#10b981"/>
+  
+  <!-- Address Bar -->
+  <rect x="130" y="15" width="1300" height="30" rx="15" fill="#4b5563"/>
+  <text x="150" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#9ca3af">
+    https://vendorsync.io/dashboard
+  </text>
+  
+  <!-- Main Dashboard Container -->
+  <rect x="0" y="60" width="1600" height="840" fill="#f9fafb"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="60" width="250" height="840" fill="#1f2937"/>
+  
+  <!-- Logo in Sidebar -->
+  <g transform="translate(30, 90)">
+    <circle cx="15" cy="15" r="12" fill="url(#dashGrad)"/>
+    <text x="40" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">
+      VendorSync
+    </text>
+  </g>
+  
+  <!-- Navigation Items -->
+  <g transform="translate(30, 150)">
+    <rect width="190" height="40" rx="8" fill="url(#dashGrad)" opacity="0.2"/>
+    <text x="15" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">
+      📊 Dashboard
+    </text>
+  </g>
+  
+  <g transform="translate(30, 210)">
+    <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#9ca3af">
+      👥 Vendors
+    </text>
+  </g>
+  
+  <g transform="translate(30, 250)">
+    <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#9ca3af">
+      🔄 Sync Jobs
+    </text>
+  </g>
+  
+  <g transform="translate(30, 290)">
+    <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#9ca3af">
+      📈 Analytics
+    </text>
+  </g>
+  
+  <g transform="translate(30, 330)">
+    <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#9ca3af">
+      ⚙️ Settings
+    </text>
+  </g>
+  
+  <!-- Main Content Area -->
+  <g transform="translate(280, 90)">
+    <!-- Header -->
+    <text x="0" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#111827">
+      Dashboard Overview
+    </text>
+    <text x="0" y="60" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6b7280">
+      Real-time synchronization status and performance metrics
+    </text>
+    
+    <!-- Stats Cards Row -->
+    <!-- Card 1: Active Vendors -->
+    <g transform="translate(0, 100)">
+      <rect width="300" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#dashShadow)"/>
+      <rect width="300" height="5" rx="12" fill="url(#cardGrad1)"/>
+      <text x="20" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6b7280">
+        Active Vendors
+      </text>
+      <text x="20" y="80" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="700" fill="#111827">
+        247
+      </text>
+      <text x="20" y="110" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#10b981">
+        ↑ 12% from last month
+      </text>
+    </g>
+    
+    <!-- Card 2: Sync Success Rate -->
+    <g transform="translate(330, 100)">
+      <rect width="300" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#dashShadow)"/>
+      <rect width="300" height="5" rx="12" fill="url(#cardGrad2)"/>
+      <text x="20" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6b7280">
+        Sync Success Rate
+      </text>
+      <text x="20" y="80" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="700" fill="#111827">
+        99.8%
+      </text>
+      <text x="20" y="110" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#10b981">
+        ↑ 0.3% improvement
+      </text>
+    </g>
+    
+    <!-- Card 3: Records Synced -->
+    <g transform="translate(660, 100)">
+      <rect width="300" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#dashShadow)"/>
+      <rect width="300" height="5" rx="12" fill="url(#cardGrad3)"/>
+      <text x="20" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6b7280">
+        Records Synced (24h)
+      </text>
+      <text x="20" y="80" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="700" fill="#111827">
+        1.2M
+      </text>
+      <text x="20" y="110" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#10b981">
+        ↑ 8.5% increase
+      </text>
+    </g>
+    
+    <!-- Card 4: Avg Response Time -->
+    <g transform="translate(990, 100)">
+      <rect width="300" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#dashShadow)"/>
+      <rect width="300" height="5" rx="12" fill="url(#cardGrad4)"/>
+      <text x="20" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6b7280">
+        Avg Response Time
+      </text>
+      <text x="20" y="80" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="700" fill="#111827">
+        87ms
+      </text>
+      <text x="20" y="110" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#10b981">
+        ↓ 15ms faster
+      </text>
+    </g>
+    
+    <!-- Charts Row -->
+    <!-- Sync Performance Chart -->
+    <g transform="translate(0, 270)">
+      <rect width="640" height="360" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#dashShadow)"/>
+      <text x="20" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#111827">
+        Sync Performance (Last 7 Days)
+      </text>
+      
+      <!-- Mock Line Chart -->
+      <g transform="translate(40, 80)">
+        <!-- Grid lines -->
+        <line x1="0" y1="0" x2="0" y2="240" stroke="#e5e7eb" stroke-width="1"/>
+        <line x1="0" y1="240" x2="560" y2="240" stroke="#e5e7eb" stroke-width="1"/>
+        
+        <!-- Y-axis labels -->
+        <text x="-10" y="5" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">100%</text>
+        <text x="-10" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">75%</text>
+        <text x="-10" y="125" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">50%</text>
+        <text x="-10" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">25%</text>
+        <text x="-10" y="245" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">0%</text>
+        
+        <!-- Data line -->
+        <polyline points="0,40 80,30 160,35 240,25 320,20 400,30 480,15 560,20" 
+                  fill="none" stroke="url(#dashGrad)" stroke-width="3" opacity="0.8"/>
+        
+        <!-- Area under line -->
+        <polygon points="0,240 0,40 80,30 160,35 240,25 320,20 400,30 480,15 560,20 560,240" 
+                 fill="url(#dashGrad)" opacity="0.1"/>
+        
+        <!-- Data points -->
+        <circle cx="0" cy="40" r="4" fill="url(#dashGrad)"/>
+        <circle cx="80" cy="30" r="4" fill="url(#dashGrad)"/>
+        <circle cx="160" cy="35" r="4" fill="url(#dashGrad)"/>
+        <circle cx="240" cy="25" r="4" fill="url(#dashGrad)"/>
+        <circle cx="320" cy="20" r="4" fill="url(#dashGrad)"/>
+        <circle cx="400" cy="30" r="4" fill="url(#dashGrad)"/>
+        <circle cx="480" cy="15" r="4" fill="url(#dashGrad)"/>
+        <circle cx="560" cy="20" r="4" fill="url(#dashGrad)"/>
+        
+        <!-- X-axis labels -->
+        <text x="0" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Mon</text>
+        <text x="80" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Tue</text>
+        <text x="160" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Wed</text>
+        <text x="240" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Thu</text>
+        <text x="320" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Fri</text>
+        <text x="400" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Sat</text>
+        <text x="480" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Sun</text>
+        <text x="560" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Mon</text>
+      </g>
+    </g>
+    
+    <!-- Recent Sync Jobs -->
+    <g transform="translate(670, 270)">
+      <rect width="620" height="360" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#dashShadow)"/>
+      <text x="20" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#111827">
+        Recent Sync Jobs
+      </text>
+      
+      <!-- Table Header -->
+      <g transform="translate(20, 60)">
+        <rect width="580" height="35" fill="#f3f4f6"/>
+        <text x="15" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">
+          Vendor
+        </text>
+        <text x="200" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">
+          Type
+        </text>
+        <text x="320" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">
+          Records
+        </text>
+        <text x="440" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">
+          Status
+        </text>
+      </g>
+      
+      <!-- Table Rows -->
+      <g transform="translate(20, 95)">
+        <!-- Row 1 -->
+        <g transform="translate(0, 20)">
+          <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#111827">Acme Corp</text>
+          <text x="200" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">Inventory</text>
+          <text x="320" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">12,453</text>
+          <rect x="440" y="-12" width="70" height="20" rx="10" fill="#d1fae5"/>
+          <text x="475" y="2" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#065f46" text-anchor="middle">
+            Success
+          </text>
+        </g>
+        
+        <!-- Row 2 -->
+        <g transform="translate(0, 60)">
+          <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#111827">TechSup Inc</text>
+          <text x="200" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">Pricing</text>
+          <text x="320" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">8,921</text>
+          <rect x="440" y="-12" width="70" height="20" rx="10" fill="#dbeafe"/>
+          <text x="475" y="2" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">
+            Running
+          </text>
+        </g>
+        
+        <!-- Row 3 -->
+        <g transform="translate(0, 100)">
+          <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#111827">Global Traders</text>
+          <text x="200" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">Orders</text>
+          <text x="320" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">5,634</text>
+          <rect x="440" y="-12" width="70" height="20" rx="10" fill="#d1fae5"/>
+          <text x="475" y="2" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#065f46" text-anchor="middle">
+            Success
+          </text>
+        </g>
+        
+        <!-- Row 4 -->
+        <g transform="translate(0, 140)">
+          <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#111827">MegaMart</text>
+          <text x="200" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">Catalog</text>
+          <text x="320" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">3,287</text>
+          <rect x="440" y="-12" width="70" height="20" rx="10" fill="#fed7d7"/>
+          <text x="475" y="2" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#991b1b" text-anchor="middle">
+            Failed
+          </text>
+        </g>
+        
+        <!-- Row 5 -->
+        <g transform="translate(0, 180)">
+          <text x="15" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#111827">SupplyHub</text>
+          <text x="200" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">Full Sync</text>
+          <text x="320" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6b7280">45,123</text>
+          <rect x="440" y="-12" width="70" height="20" rx="10" fill="#d1fae5"/>
+          <text x="475" y="2" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#065f46" text-anchor="middle">
+            Success
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

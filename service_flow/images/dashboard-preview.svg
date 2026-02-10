@@ -1,0 +1,49 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#f7fafc" />
+  
+  <!-- Header -->
+  <rect width="800" height="70" fill="#667eea" />
+  <text x="30" y="45" fill="white" font-size="24" font-weight="bold">Service Flow Dashboard</text>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="70" width="200" height="430" fill="#4a5568" />
+  <rect x="20" y="100" width="160" height="40" rx="5" fill="#667eea" />
+  <rect x="20" y="150" width="160" height="40" rx="5" fill="#2d3748" />
+  <rect x="20" y="200" width="160" height="40" rx="5" fill="#2d3748" />
+  <rect x="20" y="250" width="160" height="40" rx="5" fill="#2d3748" />
+  
+  <!-- Stats Cards -->
+  <rect x="230" y="100" width="170" height="120" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" />
+  <text x="250" y="130" fill="#718096" font-size="14">Total Requests</text>
+  <text x="250" y="170" fill="#2d3748" font-size="32" font-weight="bold">1,248</text>
+  <text x="250" y="200" fill="#48bb78" font-size="12">↑ 12% from last month</text>
+  
+  <rect x="420" y="100" width="170" height="120" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" />
+  <text x="440" y="130" fill="#718096" font-size="14">Active Workflows</text>
+  <text x="440" y="170" fill="#2d3748" font-size="32" font-weight="bold">87</text>
+  <text x="440" y="200" fill="#4299e1" font-size="12">23 pending approval</text>
+  
+  <rect x="610" y="100" width="170" height="120" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" />
+  <text x="630" y="130" fill="#718096" font-size="14">SLA Compliance</text>
+  <text x="630" y="170" fill="#2d3748" font-size="32" font-weight="bold">94%</text>
+  <text x="630" y="200" fill="#48bb78" font-size="12">↑ 3% improvement</text>
+  
+  <!-- Chart Area -->
+  <rect x="230" y="240" width="550" height="240" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" />
+  <text x="250" y="270" fill="#2d3748" font-size="16" font-weight="bold">Request Volume Trend</text>
+  
+  <!-- Simple Line Chart -->
+  <polyline points="260,420 310,380 360,400 410,360 460,390 510,340 560,370 610,330 660,350 710,310 760,340" 
+            fill="none" stroke="#667eea" stroke-width="3" />
+  <circle cx="260" cy="420" r="4" fill="#667eea" />
+  <circle cx="310" cy="380" r="4" fill="#667eea" />
+  <circle cx="360" cy="400" r="4" fill="#667eea" />
+  <circle cx="410" cy="360" r="4" fill="#667eea" />
+  <circle cx="460" cy="390" r="4" fill="#667eea" />
+  <circle cx="510" cy="340" r="4" fill="#667eea" />
+  <circle cx="560" cy="370" r="4" fill="#667eea" />
+  <circle cx="610" cy="330" r="4" fill="#667eea" />
+  <circle cx="660" cy="350" r="4" fill="#667eea" />
+  <circle cx="710" cy="310" r="4" fill="#667eea" />
+  <circle cx="760" cy="340" r="4" fill="#667eea" />
+</svg>
